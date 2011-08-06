@@ -21,7 +21,9 @@ gem 'cucumber', :group => "test"
 gem 'rack-test', :require => "rack/test", :group => "test"
 
 # Salesforce connector
-gem 'salesforce_connector', :path => "/Users/vzmind/rails/gems/salesforce_connector/"
+#gem 'salesforce_connector', :path => "/Users/vzmind/rails/gems/salesforce_connector/"
+gem 'omniauth', '0.2.0'
+gem 'httparty'
 
 # Force https connection
 #gem 'rack-ssl'

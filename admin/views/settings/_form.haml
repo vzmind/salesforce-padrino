@@ -1,0 +1,16 @@
+.group
+  =f.label :api_key_private
+  =f.error_message_on :api_key_private
+  ~f.text_area :api_key_private, :class => :text_area
+  %span.description Ex: a simple text
+
+.group
+  =f.label :api_key_public
+  =f.error_message_on :api_key_public
+  ~f.text_area :api_key_public, :class => :text_area
+  %span.description Ex: a simple text
+
+
+.group.navform.wat-cf
+  =f.submit pat(:save), :class => :button
+  =f.submit pat(:cancel), :onclick => "window.location='#{url(:settings, :index)}';return false", :class => :button

@@ -38,6 +38,10 @@ class Admin < Padrino::Application
 
   OmniAuth.config.full_host = 'https://localhost:3000'
 
+  ENV['sfdc_instance_url'] = "https://eu1.salesforce.com"
+  ENV['sfdc_api_version']  = "21.0"
+
+  
   use OmniAuth::Builder do
     provider :forcedotcom, '3MVG9PhR6g6B7ps6in8a_o8S1IvXGM41y725iSJXhSWZm5GJ0gZgvuQkLdT7YWOLciMWxn5yDglwAcjkGzcal', '2539130913145733702'
   end

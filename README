@@ -1,0 +1,5 @@
+This app provide a basic Salesforce Backend based on following gems:
+
+# padrino
+# salesfoce_connector
+# redis

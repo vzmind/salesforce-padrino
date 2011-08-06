@@ -23,6 +23,9 @@ gem 'rack-test', :require => "rack/test", :group => "test"
 # Salesforce connector
 gem 'salesforce_connector'
 
+# Force https connection
+#gem 'rack-ssl'
+
 # Redis store
 gem 'redis'
 

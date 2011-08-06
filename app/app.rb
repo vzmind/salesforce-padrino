@@ -6,6 +6,7 @@ class SalesforcePadrino < Padrino::Application
 
   enable :sessions
 
+
   ##
   # Caching support
   #

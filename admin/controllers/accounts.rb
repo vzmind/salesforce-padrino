@@ -1,3 +1,4 @@
+
 Admin.controllers :accounts do
 
   get :index do
@@ -11,14 +12,21 @@ Admin.controllers :accounts do
   end
 
   post :create do
-    @account = Account.new(params[:account])
-    if @account.save
-      flash[:notice] = 'Account was successfully created.'
-      redirect url(:accounts, :edit, :id => @account.id)
-    else
-      render 'accounts/new'
-    end
+    ENV['sfdc_token'] = request.env['omniauth.auth']['credentials']['token']
+    ENV['sfdc_instance_url'] = request.env['omniauth.auth']['instance_url']
+    #render :text => request.env['omniauth.auth'].inspect
+
+    render :text => Account.get_first_hundred.inspect
   end
+
+  #  @account = Account.new(params[:account])
+  #  if @account.save
+  #    flash[:notice] = 'Account was successfully created.'
+  #    redirect url(:accounts, :edit, :id => @account.id)
+  #  else
+  #    render 'accounts/new'
+  #  end
+  #end
 
   get :edit, :with => :id do
     @account = Account.find(params[:id])

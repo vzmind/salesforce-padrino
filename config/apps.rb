@@ -26,10 +26,12 @@
 # override these settings in the subapps as needed.
 #
 Padrino.configure_apps do
-  # enable :sessions
-  set :session_secret, 'e3557dea3314b390af0a4ad493856d06d61ab477855570bd17e536e0d5d61b72'
+  disable :sessions
+  set :session_secret, 'b30960eb53ffb8f36310109722ac74a9a0351eecfafe69c6f2e7eb587a9d69d1'
+  set :session_key, "_salesforce-padrino"
 end
 
+#
 # Mounts the core application for this project
-Padrino.mount("SalesforcePadrino").to('/')
-Padrino.mount("Admin").to("/admin")
+#Padrino.mount("SalesforcePadrino").to('/')
+Padrino.mount("Admin").to("/")

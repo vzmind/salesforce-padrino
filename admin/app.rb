@@ -20,10 +20,8 @@ class Admin < Padrino::Application
   # layout  :my_layout          # Layout can be in views/layouts/foo.ext or views/foo.ext (default :application)
   #
 
-  set :login_page, "/admin/sessions/new"
+  set :login_page, "/sessions/new"
 
-  enable  :sessions
-  disable :store_location
 
   access_control.roles_for :any do |role|
     role.protect "/"
@@ -34,4 +32,14 @@ class Admin < Padrino::Application
     role.project_module :settings, "/settings"
     role.project_module :accounts, "/accounts"
   end
+
+  use Rack::Session::Pool, :key => settings.session_key, :secret => settings.session_secret
+  use Rack::Flash
+
+  OmniAuth.config.full_host = 'https://localhost:3000'
+
+  use OmniAuth::Builder do
+    provider :forcedotcom, '3MVG9PhR6g6B7ps6in8a_o8S1IvXGM41y725iSJXhSWZm5GJ0gZgvuQkLdT7YWOLciMWxn5yDglwAcjkGzcal', '2539130913145733702'
+  end
+  
 end

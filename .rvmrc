@@ -1,2 +1,2 @@
-rvm use 1.9.3@salesforce-padrino
+rvm use 1.9.2@salesforce-padrino
 rvm_gemset_create_on_use_flag=1

@@ -6,4 +6,14 @@
 
 require File.expand_path("../config/boot.rb", __FILE__)
 
+  module OmniAuth
+    module Strategies
+      #tell omniauth to load our strategy
+      autoload :Forcedotcom, '/Users/vzmind/rails/apps/salesforce-padrino/lib/forcedotcom'
+    end
+  end
+
+
 run Padrino.application
+
+

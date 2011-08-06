@@ -15,7 +15,7 @@ CERT_PATH = 'lib/certs/'
 
 # HTPPS options for Webrick
 webrick_options = {
-        :Port               => 8443,
+        :Port               => 3000,
         :Logger             => WEBrick::Log::new($stderr, WEBrick::Log::DEBUG),
         :DocumentRoot       => "/Users/vzmind/rails/apps/ruby-lugdunum/",
         :SSLEnable          => true,
@@ -24,7 +24,6 @@ webrick_options = {
         :SSLPrivateKey      => OpenSSL::PKey::RSA.new(          File.open(File.join(CERT_PATH, "server.key")).read),
         :SSLCertName        => [ [ "CN",WEBrick::Utils::getservername ] ]
 }
-
 Bundler.require(:default, PADRINO_ENV)
 
 ##
@@ -46,7 +45,9 @@ end
 Padrino.after_load do
 end
 
+
 Padrino.load!
 
 Rack::Handler::WEBrick.run Padrino.application, webrick_options
+
 

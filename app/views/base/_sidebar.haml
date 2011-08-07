@@ -1,12 +1,18 @@
 .block
-  %h3 Simple Block
+  %h3 General informations
   .content
     %p
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      This tiny app has been designed to provide easy and fast access through Salesforce API to the main components of a SF account. 
+    %p
+      We use Padrino Framework for code organization, Salesforce_connector gem to access the API, OmniAuth for authentication and Redis 
+      for high velocity response.
+    %p
+      This app is hosted on Heroku for high availability and installation easiness concerns.
 .block
-  %h3 Links
+  %h3 Related Links
   %ul.navigation
-    %li=link_to "Link 1"
-    %li=link_to "Link 2"
+    %li=link_to "Padrino Frameork", "http://www.padrinorb.com"
+    %li=link_to "Salesforce Connector", "https://rubygems.org/gems/salesforce_connector"
+    %li=link_to "Redis Caching", "http://redis.io/"
+
 

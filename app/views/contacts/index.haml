@@ -1,0 +1,25 @@
+.block
+  .secondary-navigation
+    %ul.wat-cf
+      %li "oto"
+  .content
+    %h2.title
+      "TITLE"
+    .inner
+      %table.table
+        %tr
+          %th.first="ID"
+          %th="Name"
+          %th.last="&nbsp;"
+        -@contacts.each do |contact|
+          %tr
+            %td.first=contact["Id"]
+            %td=contact["Name"]
+            %td.last
+              ="edit"
+              ="|"
+              ="delete"
+      .actions-bar.wat-cf
+        .actions="&nbsp;"
+
+-content_for :sidebar, partial("base/sidebar")

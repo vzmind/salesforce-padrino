@@ -1,7 +1,7 @@
 PATH
   remote: /Users/vzmind/rails/gems/salesforce_connector
   specs:
-    salesforce_connector (0.0.4)
+    salesforce_connector (0.0.5)
       httparty (~> 0.7.7)
       omniauth (~> 0.2.4)
 
@@ -203,7 +203,7 @@ DEPENDENCIES
   rake
   redis
   rspec
-  salesforce_connector (= 0.0.4)!
+  salesforce_connector (= 0.0.5)!
   sass
   sqlite3
   thin

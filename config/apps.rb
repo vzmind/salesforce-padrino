@@ -26,12 +26,13 @@
 # override these settings in the subapps as needed.
 #
 Padrino.configure_apps do
-  disable :sessions
+  enable :sessions
+  enable :flash
   set :session_secret, 'b30960eb53ffb8f36310109722ac74a9a0351eecfafe69c6f2e7eb587a9d69d1'
-  set :session_key, "_salesforce-padrino"
+  set :session_id, "_salesforce-padrino"
 end
 
 #
 # Mounts the core application for this project
-#Padrino.mount("SalesforcePadrino").to('/')
-Padrino.mount("Admin").to("/")
+Padrino.mount("SalesforcePadrino").to('/')
+Padrino.mount("Admin").to("/admin")

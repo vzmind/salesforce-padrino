@@ -17,7 +17,6 @@ CERT_PATH = 'lib/certs/'
 webrick_options = {
         :Port               => 3000,
         :Logger             => WEBrick::Log::new($stderr, WEBrick::Log::DEBUG),
-        :DocumentRoot       => "/Users/vzmind/rails/apps/ruby-lugdunum/",
         :SSLEnable          => true,
         :SSLVerifyClient    => OpenSSL::SSL::VERIFY_NONE,
         :SSLCertificate     => OpenSSL::X509::Certificate.new(  File.open(File.join(CERT_PATH, "server.crt")).read),
@@ -32,6 +31,17 @@ Bundler.require(:default, PADRINO_ENV)
 # Padrino::Logger::Config[:development] = { :log_level => :devel, :stream => :stdout }
 # Padrino::Logger.log_static = true
 #
+
+class CommonSessionHolder
+  class << self
+    def new(*args)
+      puts "Create session"
+      @@session_pool ||= Rack::Session::Pool.new(*args)
+      puts "Return session"
+      @@session_pool
+    end
+  end
+end
 
 ##
 # Add your before load hooks here

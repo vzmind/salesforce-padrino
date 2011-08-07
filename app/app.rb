@@ -3,21 +3,23 @@ class SalesforcePadrino < Padrino::Application
   register Padrino::Rendering
   register Padrino::Mailer
   register Padrino::Helpers
-
+  register Padrino::Admin::Helpers
+  register Padrino::Admin::AccessControl
+  
   #enable :sessions
 
 
   ##
   # Caching support
   #
-  # register Padrino::Cache
-  # enable :caching
+  register Padrino::Cache
+  enable :caching
   #
   # You can customize caching store engines:
   #
   #   set :cache, Padrino::Cache::Store::Memcache.new(::Memcached.new('127.0.0.1:11211', :exception_retry_limit => 1))
   #   set :cache, Padrino::Cache::Store::Memcache.new(::Dalli::Client.new('127.0.0.1:11211', :exception_retry_limit => 1))
-  #   set :cache, Padrino::Cache::Store::Redis.new(::Redis.new(:host => '127.0.0.1', :port => 6379, :db => 0))
+     set :cache, Padrino::Cache::Store::Redis.new(::Redis.new(:host => '127.0.0.1', :port => 6379, :db => 0))
   #   set :cache, Padrino::Cache::Store::Memory.new(50)
   #   set :cache, Padrino::Cache::Store::File.new(Padrino.root('tmp', app_name.to_s, 'cache')) # default choice
   #
@@ -58,4 +60,18 @@ class SalesforcePadrino < Padrino::Application
   #     render 'errors/505'
   #   end
   #
+
+  # Session storing using cookies and Rack::Session::Pool
+  #use Rack::Session::Pool, :key => settings.session_key, :secret => settings.session_secret
+  #use Rack::Flash
+  # OmniAuth configuration using Forcedotcom strategy
+  OmniAuth.config.full_host = 'https://localhost:3000'
+  use OmniAuth::Builder do
+    provider :forcedotcom, '3MVG9PhR6g6B7ps6in8a_o8S1IvXGM41y725iSJXhSWZm5GJ0gZgvuQkLdT7YWOLciMWxn5yDglwAcjkGzcal', '2539130913145733702'
+  end
+
+  # Salesforce API connection params
+  ENV['sfdc_instance_url'] = "https://eu1.salesforce.com"
+  ENV['sfdc_api_version']  = "21.0"
+  
 end

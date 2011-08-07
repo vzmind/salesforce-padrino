@@ -1,0 +1,6 @@
+- @accounts.each do |account|
+  - account.each do |field|
+    - field.each do |name,value|
+      = "#{name}=> #{value}"
+      <br/>
+      = pat(:new)

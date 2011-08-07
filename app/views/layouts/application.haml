@@ -7,13 +7,15 @@
   %body
     #container
       #header
-        %h1=link_to "Padrino Admin", url("accounts")
+        %h1=link_to "Salesforce Admin", url("accounts")
         #user-navigation
           %ul.wat-cf
         #main-navigation
           %ul.wat-cf
-            %li
-              =link_to("Salesforce Account", "/accounts")
+            %li=link_to("Accounts", "/accounts")
+            %li=link_to("Leads", "/leads")
+            %li=link_to("Opportunities", "/opportunities")
+            %li=link_to("Contacts", "/contacts")
       #wrapper.wat-cf
         .flash=[:error, :warning, :notice].map { |type| flash_tag(type, :class => "message #{type}") }.join
         #main
@@ -23,7 +25,8 @@
               %p
                 Copyright &copy;
                 =Time.now.year
-                Your Site - Powered by
+                = link_to "vzmind.tumblr.com", "http://vzmind.tumblr.com", :target => :_blank
+                = "- Powered by"
                 =link_to "Padrino v.#{Padrino.version}", "http://padrino.github.com", :target => :_blank
         #sidebar=yield_content :sidebar
 

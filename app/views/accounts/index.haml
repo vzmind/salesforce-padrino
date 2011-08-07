@@ -1,5 +1,25 @@
-- @accounts.each do |account|
-  - account.each do |field|
-    - field.each do |name,value|
-      = "#{name}=> #{value}"
-      <br/>
+.block
+  .secondary-navigation
+    %ul.wat-cf
+      %li "oto"
+  .content
+    %h2.title
+      "TITLE"
+    .inner
+      %table.table
+        %tr
+          %th.first="ID"
+          %th="Name"
+          %th.last="&nbsp;"
+        -@accounts.each do |account|
+          %tr
+            %td.first=account["Id"]
+            %td=account["Name"]
+            %td.last
+              ="edit"
+              ="|"
+              ="delete"
+      .actions-bar.wat-cf
+        .actions="&nbsp;"
+
+-content_for :sidebar, partial("base/sidebar")

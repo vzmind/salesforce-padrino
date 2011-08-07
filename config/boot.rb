@@ -58,6 +58,6 @@ end
 
 Padrino.load!
 
-Rack::Handler::WEBrick.run Padrino.application, webrick_options
+#Rack::Handler::WEBrick.run Padrino.application, webrick_options
 
 

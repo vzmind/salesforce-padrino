@@ -17,7 +17,7 @@ class SalesforcePadrino < Padrino::Application
   #
   #   set :cache, Padrino::Cache::Store::Memcache.new(::Memcached.new('127.0.0.1:11211', :exception_retry_limit => 1))
   #   set :cache, Padrino::Cache::Store::Memcache.new(::Dalli::Client.new('127.0.0.1:11211', :exception_retry_limit => 1))
-     set :cache, Padrino::Cache::Store::Redis.new(::Redis.new(:host => '127.0.0.1', :port => 6379, :db => 0))
+     set :cache, Padrino::Cache::Store::Redis.new(::Redis.new(:host => 'angler.redistogo.com', :port => 9352, :password => 'a2acfa23d878840fb6255a95d469bde3'))
   #   set :cache, Padrino::Cache::Store::Memory.new(50)
   #   set :cache, Padrino::Cache::Store::File.new(Padrino.root('tmp', app_name.to_s, 'cache')) # default choice
   #
@@ -63,10 +63,10 @@ class SalesforcePadrino < Padrino::Application
   #use Rack::Session::Pool, :key => settings.session_key, :secret => settings.session_secret
   #use Rack::Flash
   # OmniAuth configuration using Forcedotcom strategy
-  OmniAuth.config.full_host = 'https://empty-rain-928.heroku.com/'
+  OmniAuth.config.full_host = 'https://salesforce-padrino.heroku.com'
 
   use OmniAuth::Builder do
-    provider :forcedotcom, '3MVG9PhR6g6B7ps6in8a_o8S1IvXGM41y725iSJXhSWZm5GJ0gZgvuQkLdT7YWOLciMWxn5yDglwAcjkGzcal', '2539130913145733702'
+    provider :forcedotcom, '3MVG9PhR6g6B7ps6in8a_o8S1Ii7Alq423LWj8XaSlFOIG_DjMsQb..mF32hPoK89..fU.zGxtuV6jbANj5je', '5960576012903158319'
   end
 
   # Salesforce API connection params

@@ -63,7 +63,8 @@ class SalesforcePadrino < Padrino::Application
   #use Rack::Session::Pool, :key => settings.session_key, :secret => settings.session_secret
   #use Rack::Flash
   # OmniAuth configuration using Forcedotcom strategy
-  OmniAuth.config.full_host = 'https://localhost:3000'
+  OmniAuth.config.full_host = 'https://empty-rain-928.heroku.com/'
+
   use OmniAuth::Builder do
     provider :forcedotcom, '3MVG9PhR6g6B7ps6in8a_o8S1IvXGM41y725iSJXhSWZm5GJ0gZgvuQkLdT7YWOLciMWxn5yDglwAcjkGzcal', '2539130913145733702'
   end

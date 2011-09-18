@@ -1,0 +1,25 @@
+.block
+  .secondary-navigation
+    %ul.wat-cf
+      %li "oto"
+  .content
+    %h2.title
+      Vistors (Custom Object Database.com)
+    .inner
+      %table.table
+        %tr
+          %th.first="ID"
+          %th="Name"
+          %th.last="&nbsp;"
+        -@visitors.each do |visitor|
+          %tr
+            %td.first=visitor["Id"]
+            %td=visitor["Name"]
+            %td.last
+              ="edit"
+              ="|"
+              ="delete"
+      .actions-bar.wat-cf
+        .actions="&nbsp;"
+
+-content_for :sidebar, partial("base/sidebar")

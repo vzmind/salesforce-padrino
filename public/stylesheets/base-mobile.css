@@ -13,17 +13,16 @@ h4{font-size:16px;margin:10px 0;font-weight:normal;}
 hr{height:1px;border:0;}
 p{margin:15px 0;}
 a img{border:none;}
-body{font-size:12px;font-family:sans-serif;}
-#container{min-width:960px;}
+body{font-size:24px;font-family:sans-serif;}
 #header,#wrapper{padding:0 20px;}
 #header{position:relative;padding-top:1px;}
 #header h1{margin:0;padding:10px 0;font-size:26px;}
 #header h1 a:link,#header h1 a:active,#header h1 a:hover,#header h1 a:visited{text-decoration:none;}
-#main{width:73%;float:left;}
+#main{width:100%;float:left;}
 .actions-bar{padding:10px 1px;}
 .actions-bar .actions{float:left;}
 .actions-bar .pagination{float:right;padding:1px 0;}
-#sidebar{width:25%;float:right;}
+#sidebar{width:25%;float:right;display:none}
 #sidebar h3{padding:10px 15px;margin:0;font-size:13px;}
 #sidebar .block{margin-bottom:20px;padding-bottom:10px;}
 #sidebar .block .content{padding:0 15px;}
@@ -44,7 +43,7 @@ body{font-size:12px;font-family:sans-serif;}
 #main-navigation ul li a:link,#main-navigation ul li a:visited,#main-navigation ul li a:hover,#main-navigation ul li a:active,
 .secondary-navigation ul li a:link,.secondary-navigation ul li a:visited,.secondary-navigation ul li a:hover,.secondary-navigation ul li a:active,
 #user-navigation ul li a:link,#user-navigation ul li a:visited,#user-navigation ul li a:hover,#user-navigation ul li a:active{text-decoration:none;}
-#main-navigation ul li a{font-size:14px;line-height:14px;display:block;padding:8px 15px;}
+#main-navigation ul li a{font-size:20px;line-height:14px;display:block;padding:8px 15px;}
 .secondary-navigation{font-size:13px;border-bottom-width:10px;border-bottom-style:solid;}
 .secondary-navigation ul li a{display:block;padding:10px 15px;}
 #footer{padding-bottom:20px;}
@@ -56,7 +55,6 @@ body{font-size:12px;font-family:sans-serif;}
 .table{width:100%;border-collapse:collapse;margin-bottom:15px;}
 .table th{padding:10px;font-weight:bold;text-align:left;}
 /*.table th.first{width:30px;}*/
-.table th.last{width:80px;}
 .table .checkbox{margin-left:10px;}
 .table td{padding:10px;}
 .table td.last{text-align:right;}

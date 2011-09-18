@@ -1,24 +1,22 @@
 .block
   .secondary-navigation
     %ul.wat-cf
-      %li "oto"
+      %li=@test
   .content
     %h2.title
-      "Contacts"
+      Contacts
     .inner
       %table.table
         %tr
           %th.first="ID"
           %th="Name"
-          %th.last="&nbsp;"
+          %th.last="Email"
         -@contacts.each do |contact|
-          %tr
+          %tr{:onclick=>"window.location='index.html'"}
             %td.first=contact["Id"]
             %td=contact["Name"]
             %td.last
-              ="edit"
-              ="|"
-              ="delete"
+              =contact["Email"]
       .actions-bar.wat-cf
         .actions="&nbsp;"
 

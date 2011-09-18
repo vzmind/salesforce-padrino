@@ -3,7 +3,10 @@
   %head
     %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}
     %title Padrino Admin
-    =stylesheet_link_tag :base, "themes/default/style"
+    - if @mobile_agent
+      =stylesheet_link_tag "base-mobile", "themes/default/mobile-style"
+    - else
+      =stylesheet_link_tag :base, "themes/default/style"
   %body
     #container
       #header
@@ -16,6 +19,7 @@
             %li=link_to("Leads", "/leads")
             %li=link_to("Opportunities", "/opportunities")
             %li=link_to("Contacts", "/contacts")
+            %li=link_to("Visitors", "/visitors")
       #wrapper.wat-cf
         .flash=[:error, :warning, :notice].map { |type| flash_tag(type, :class => "message #{type}") }.join
         #main

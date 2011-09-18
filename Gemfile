@@ -16,7 +16,7 @@ gem 'cucumber', :group => "test"
 gem 'rack-test', :require => "rack/test", :group => "test"
 
 # Salesforce connector
-gem 'salesforce_connector', '0.0.8'
+gem 'salesforce_connector', '0.0.10'
 
 # Redis store
 gem 'redis'

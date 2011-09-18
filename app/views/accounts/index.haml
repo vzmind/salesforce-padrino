@@ -4,21 +4,19 @@
       %li "oto"
   .content
     %h2.title
-      "Accounts"
+      Accounts
     .inner
       %table.table
         %tr
           %th.first="ID"
           %th="Name"
-          %th.last="&nbsp;"
+          %th.last="Annual Revenue"
         -@accounts.each do |account|
-          %tr
+          %tr{:onclick=>"window.location='index.html'"}
             %td.first=account["Id"]
             %td=account["Name"]
             %td.last
-              ="edit"
-              ="|"
-              ="delete"
+              =account["AnnualRevenue"]
       .actions-bar.wat-cf
         .actions="&nbsp;"
 

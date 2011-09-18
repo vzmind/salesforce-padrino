@@ -1,4 +1,4 @@
-SalesforcePadrino.controllers :leads do
+SalesforcePadrino.controllers :visitors do
 
   before do
     if ENV['sfdc_token'].nil?
@@ -7,8 +7,8 @@ SalesforcePadrino.controllers :leads do
   end
 
   get :index, :map => '/visitors' do
-    @leads = cache( "cache_for_visitors", :expires_in => 15 ) do
-      @leads = SalesforceConnector::Visitor.get_first_hundred
+    @visitors = cache( "cache_for_visitors", :expires_in => 15 ) do
+      @visitors = SalesforceConnector::Visitor.get_first_hundred
     end
 
     render "visitors/index"

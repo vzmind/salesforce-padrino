@@ -4,21 +4,19 @@
       %li "oto"
   .content
     %h2.title
-      "Leads"
+      Leads
     .inner
       %table.table
         %tr
           %th.first="ID"
           %th="Name"
-          %th.last="&nbsp;"
+          %th.last="Annual Revenue"
         -@leads.each do |lead|
-          %tr
+          %tr{:onclick=>"window.location='index.html'"}
             %td.first=lead["Id"]
             %td=lead["Name"]
             %td.last
-              ="edit"
-              ="|"
-              ="delete"
+              =lead["AnnualRevenue"]
       .actions-bar.wat-cf
         .actions="&nbsp;"
 

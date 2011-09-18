@@ -6,6 +6,10 @@ SalesforcePadrino.controllers :accounts do
     end 
   end
 
+  before :agent => /iPhone|Mobile|MIDP/ do
+    @mobile_agent=true
+  end
+
   get :index, :map => '/accounts' do
     @accounts = cache( "cache_for_accounts", :expires_in => 15 ) do
       @accounts = SalesforceConnector::Account.get_first_hundred

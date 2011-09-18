@@ -4,21 +4,19 @@
       %li "oto"
   .content
     %h2.title
-      "Opportunities"
+      Opportunities
     .inner
       %table.table
         %tr
           %th.first="ID"
           %th="Name"
-          %th.last="&nbsp;"
+          %th.last="Amount"
         -@opportunities.each do |opportunity|
-          %tr
+          %tr{:onclick=>"window.location='index.html'"}
             %td.first=opportunity["Id"]
             %td=opportunity["Name"]
             %td.last
-              ="edit"
-              ="|"
-              ="delete"
+              =opportunity["Amount"]
       .actions-bar.wat-cf
         .actions="&nbsp;"
 

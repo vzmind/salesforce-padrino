@@ -11,7 +11,7 @@ SalesforcePadrino.controllers :leads do
       @leads = SalesforceConnector::Visitor.get_first_hundred
     end
 
-    render "visitor/index"
+    render "visitors/index"
   end  
 
   

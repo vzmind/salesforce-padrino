@@ -143,7 +143,7 @@ GEM
       ruby-openid (>= 2.1.7)
     rubyntlm (0.1.1)
     rubyzip (0.9.4)
-    salesforce_connector (0.0.6)
+    salesforce_connector (0.0.7)
       httparty (~> 0.7.7)
       omniauth (~> 0.2.4)
     sass (3.1.7)
@@ -180,5 +180,5 @@ DEPENDENCIES
   rake
   redis
   rspec
-  salesforce_connector (= 0.0.6)
+  salesforce_connector (= 0.0.7)
   sass
